@@ -27,3 +27,27 @@
 .process-step h3{font:600 23px "Space Grotesk";margin:0 0 10px}.process-step p{font-size:13px;line-height:1.8;color:#999;max-width:290px}.process-line{height:1px;background:linear-gradient(90deg,transparent,#ffd50055,transparent);margin-top:30px}
 @media(max-width:800px){.process-grid{grid-template-columns:1fr;gap:24px}.process-step{display:grid;grid-template-columns:100px 1fr;column-gap:22px;align-items:center;padding:0}.process-orbit{width:82px;height:82px;grid-row:span 2;margin:0}.process-orbit:before{width:100px;height:44px}.process-orbit:after{width:50px;height:100px}.process-orbit span{font-size:26px}.process-step h3{align-self:end}.process-step p{align-self:start;margin-top:7px}.price-orbit{width:76px;height:76px;top:70px}.price-card{padding:26px}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.price-orbit,.process-orbit:before,.process-orbit:after,.pricing:before,.process:before{animation:none}}
+
+
+/* Distinct motion accents: varied geometry instead of repeating orbit rings */
+.price-motion{position:absolute;right:28px;top:76px;width:62px;height:62px;pointer-events:none;z-index:0}
+.price-card:nth-child(1) .price-motion{border:1px solid #ffd50070;transform:rotate(45deg);animation:float-diamond 5s ease-in-out infinite}
+.price-card:nth-child(1) .price-motion:after{content:"";position:absolute;width:8px;height:8px;background:#ffd500;right:-4px;top:8px;box-shadow:0 0 15px #ffd500}
+.price-card:nth-child(2) .price-motion{width:72px;height:3px;top:102px;background:linear-gradient(90deg,transparent,#ffd500,transparent);animation:scan-line 3.2s ease-in-out infinite}
+.price-card:nth-child(2) .price-motion:after{content:"";position:absolute;right:0;top:-4px;width:11px;height:11px;border:1px solid #ffd500;transform:rotate(45deg)}
+.price-card:nth-child(3) .price-motion{width:54px;height:54px;border:2px dotted #ffd50085;border-radius:14px;animation:spin-square 12s linear infinite}
+.price-card:nth-child(3) .price-motion:after{content:"";position:absolute;width:12px;height:12px;background:#ffd500;border-radius:50%;left:-6px;top:18px;box-shadow:0 0 18px #ffd500}
+@keyframes float-diamond{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -12px;rotate:12deg}}
+@keyframes scan-line{0%,100%{translate:-8px 0;opacity:.35}50%{translate:8px 0;opacity:1}}
+@keyframes spin-square{to{transform:rotate(360deg)}}
+.price-card .price-top,.price-card h3,.price-card>p,.price-card ul,.price-card>a{position:relative;z-index:1}
+.process-marker{width:108px;height:82px;display:flex;align-items:center;position:relative;margin-bottom:28px}
+.process-marker span{font:600 42px "Space Grotesk";color:#ffd500;position:relative;z-index:1}
+.process-marker:before{content:"";position:absolute;left:0;bottom:9px;width:78px;height:2px;background:#ffd50035;transform-origin:left;animation:marker-grow 3.5s ease-in-out infinite}
+.process-marker:after{content:"";position:absolute;right:8px;top:9px;width:23px;height:23px;border:1px solid #ffd50075;transform:rotate(45deg);animation:marker-turn 8s linear infinite}
+.process-marker i{position:absolute;width:6px;height:6px;background:#ffd500;border-radius:50%;left:72px;bottom:6px;box-shadow:0 0 12px #ffd500;animation:marker-dot 3.5s ease-in-out infinite}
+@keyframes marker-grow{0%,100%{transform:scaleX(.45);opacity:.45}50%{transform:scaleX(1);opacity:1}}
+@keyframes marker-turn{to{transform:rotate(405deg)}}
+@keyframes marker-dot{0%,100%{translate:0 0}50%{translate:18px 0}}
+@media(max-width:800px){.process-marker{width:82px;height:70px;grid-row:span 2;margin:0}.process-marker span{font-size:30px}.process-marker:after{right:2px;width:17px;height:17px}.process-marker i{left:57px}}
+@media(prefers-reduced-motion:reduce){.price-motion,.process-marker:before,.process-marker:after,.process-marker i{animation:none}}

@@ -36,3 +36,19 @@ if("IntersectionObserver" in window){
 }else{
   revealItems.forEach(item=>item.classList.add("is-visible"));
 }
+
+
+// Cookie-Hinweis: derzeit keine Analyse- oder Werbe-Cookies aktiv.
+(function(){
+  const banner=document.getElementById("cookie-banner");
+  if(!banner) return;
+  let choice=null;
+  try{choice=localStorage.getItem("nova-cookie-choice");}catch(e){}
+  if(!choice) banner.hidden=false;
+  const save=(value)=>{
+    try{localStorage.setItem("nova-cookie-choice",value);}catch(e){}
+    banner.hidden=true;
+  };
+  document.getElementById("cookie-necessary")?.addEventListener("click",()=>save("necessary"));
+  document.getElementById("cookie-accept")?.addEventListener("click",()=>save("accepted"));
+})();

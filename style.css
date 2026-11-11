@@ -51,3 +51,16 @@
 @keyframes marker-dot{0%,100%{translate:0 0}50%{translate:18px 0}}
 @media(max-width:800px){.process-marker{width:82px;height:70px;grid-row:span 2;margin:0}.process-marker span{font-size:30px}.process-marker:after{right:2px;width:17px;height:17px}.process-marker i{left:57px}}
 @media(prefers-reduced-motion:reduce){.price-motion,.process-marker:before,.process-marker:after,.process-marker i{animation:none}}
+
+
+/* Cookie notice */
+.cookie-banner{position:fixed;z-index:1000;left:22px;right:22px;bottom:22px;max-width:900px;margin:auto;background:#111;border:1px solid #ffd50075;box-shadow:0 18px 70px #000b;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;color:#fff}
+.cookie-banner[hidden]{display:none}
+.cookie-copy strong{font:600 17px "Space Grotesk",sans-serif;color:#ffd500}
+.cookie-copy p{font-size:12px;line-height:1.7;color:#bbb;margin:7px 0 4px;max-width:560px}
+.cookie-link{font-size:11px;color:#ffd500;text-decoration:underline}
+.cookie-actions{display:flex;gap:9px;flex-shrink:0}
+.cookie-button{font:600 11px "DM Sans",sans-serif;padding:12px 15px;cursor:pointer;border:1px solid #ffd500;background:transparent;color:#fff}
+.cookie-primary{background:#ffd500;color:#080808}
+.cookie-button:hover{filter:brightness(1.12)}
+@media(max-width:650px){.cookie-banner{left:12px;right:12px;bottom:12px;padding:18px;display:block}.cookie-actions{margin-top:14px}.cookie-button{flex:1}.cookie-actions{display:flex}}

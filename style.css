@@ -64,3 +64,25 @@
 .cookie-primary{background:#ffd500;color:#080808}
 .cookie-button:hover{filter:brightness(1.12)}
 @media(max-width:650px){.cookie-banner{left:12px;right:12px;bottom:12px;padding:18px;display:block}.cookie-actions{margin-top:14px}.cookie-button{flex:1}.cookie-actions{display:flex}}
+
+
+/* SCRATCHLAB portfolio preview */
+.scratch-visual{background:radial-gradient(circle at 50% 48%,#173b32,#0b1110 70%)}
+.scratch-window{position:relative;z-index:1;width:82%;max-width:520px;min-height:265px;border:1px solid #45685c;border-radius:12px;background:#111a17;overflow:hidden;box-shadow:0 25px 80px #000}
+.scratch-top{height:32px;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid #2c4138}
+.scratch-top span{width:7px;height:7px;border-radius:50%;background:#8a9b91}
+.scratch-top b{margin-left:auto;color:#d7e6de;font-size:8px;letter-spacing:1.4px}
+.scratch-workspace{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px}
+.scratch-stage{min-height:185px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;border:1px solid #315448;border-radius:9px;background:linear-gradient(145deg,#203b31,#14251f)}
+.scratch-stage:before,.scratch-stage:after{content:"";position:absolute;width:22px;height:22px;border:1px solid #5aa887;border-radius:50%;opacity:.55}
+.scratch-stage:before{top:18px;left:18px}.scratch-stage:after{right:18px;bottom:18px}
+.scratch-cat{width:70px;height:70px;display:grid;place-items:center;border-radius:22px;background:#ffd45a;color:#243629;font-size:38px;transform:rotate(-12deg);box-shadow:0 12px 30px #0005}
+.scratch-stage small{color:#a8c9b8;font-size:7px;letter-spacing:1.5px}
+.scratch-blocks{display:flex;flex-direction:column;justify-content:center;gap:9px}
+.scratch-blocks span{padding:11px 10px;border-radius:8px;background:#e9a63d;color:#30220c;font-size:9px;font-weight:700;box-shadow:inset 0 -3px #0002}
+.scratch-blocks span:nth-child(2){background:#5aa9e8;color:#102238}
+.scratch-blocks span:nth-child(3){background:#8dca62;color:#203219}
+.scratch-blocks span:nth-child(4){background:#a78be5;color:#24183d}
+.scratch-orb{position:absolute;width:270px;height:270px;border:1px solid #5ab58b35;border-radius:50%}
+@media(max-width:800px){.scratch-window{width:88%;min-height:235px}.scratch-workspace{gap:9px;padding:12px}.scratch-stage{min-height:165px}.scratch-blocks span{font-size:8px;padding:10px 7px}}
+@media(max-width:420px){.scratch-workspace{grid-template-columns:1fr 1fr}.scratch-stage{min-height:150px}.scratch-cat{width:55px;height:55px;font-size:30px}}

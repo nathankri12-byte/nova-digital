@@ -71,4 +71,92 @@ footer{background:#0d1c16;color:white;padding:34px 0 24px}.footer-top{display:fl
 const filters=[...document.querySelectorAll('.filter')],dishes=[...document.querySelectorAll('.dish')];
 filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(item=>item.classList.toggle('active',item===button));const key=button.dataset.filter;dishes.forEach(dish=>dish.hidden=key!=='all'&&dish.dataset.category!==key)}));
 </script>
+
+<!-- ORDERING EXPERIENCE -->
+<style>
+.order-nav{position:relative}.cart-trigger{border:0;cursor:pointer;font:800 11px 'DM Sans';display:flex;gap:9px;align-items:center}.cart-count{display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--orange);color:#14271f;font-size:10px}
+.ordering{background:#f0eee5}.order-toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}.branch-select{border:1px solid #d8d5ca;background:white;border-radius:12px;padding:12px 14px;font:700 12px 'DM Sans';min-width:230px;color:#17251e}.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.food-card{background:#fffefa;border:1px solid #e6e1d6;border-radius:18px;padding:20px;display:flex;flex-direction:column;min-height:220px}.food-card .tag{font-size:9px;letter-spacing:.16em;font-weight:800;color:#a05d21}.food-card h3{font-size:18px;margin:12px 0 6px}.food-card p{font-size:11px;line-height:1.65;color:#74786f;flex:1;margin:0 0 15px}.food-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px}.food-price{font:800 17px Manrope}.add-food{border:0;border-radius:24px;background:#14271f;color:white;padding:10px 14px;font:800 10px 'DM Sans';cursor:pointer}.add-food:hover{background:#31513f}.catalog-category{grid-column:1/-1;font:800 23px Manrope;letter-spacing:-.04em;margin:20px 0 0;padding-bottom:12px;border-bottom:1px solid #ddd8cc}.catalog-category:first-child{margin-top:0}
+.cart-drawer{position:fixed;inset:0;z-index:100;display:none}.cart-drawer.open{display:block}.cart-backdrop{position:absolute;inset:0;background:#07130dcc}.cart-panel{position:absolute;right:0;top:0;height:100%;width:min(480px,100%);background:#fffefa;padding:26px;overflow:auto;box-shadow:-20px 0 70px #0002}.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e6e1d6;padding-bottom:18px}.cart-head h2{font:800 25px Manrope;margin:0}.close-cart{border:0;background:#eeeae0;border-radius:50%;width:38px;height:38px;font-size:21px;cursor:pointer}.cart-empty{padding:40px 10px;text-align:center;color:#74786f;font-size:13px}.cart-line{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px 0;border-bottom:1px solid #eee9df}.cart-line strong{font-size:13px}.cart-line small{display:block;color:#777;font-size:10px;margin-top:4px}.qty{display:flex;align-items:center;gap:9px}.qty button{width:27px;height:27px;border:1px solid #ddd;border-radius:50%;background:white;cursor:pointer}.cart-total{display:flex;justify-content:space-between;font:800 18px Manrope;padding:20px 0}.cart-actions{display:grid;gap:10px}.cart-actions button{width:100%;border:0;cursor:pointer}.checkout-form{display:none;margin-top:24px;border-top:1px solid #e6e1d6;padding-top:20px}.checkout-form.show{display:block}.checkout-form h3{font:800 20px Manrope}.checkout-form label{display:block;font-size:10px;font-weight:800;margin:12px 0 5px}.checkout-form input,.checkout-form select,.checkout-form textarea{width:100%;padding:12px;border:1px solid #ddd8cc;border-radius:9px;background:white;font:12px 'DM Sans'}.checkout-form .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.checkout-note{font-size:10px;color:#777;line-height:1.65;margin:14px 0}.notice{padding:13px;border-radius:10px;background:#f5eee0;color:#6b4b22;font-size:11px;line-height:1.6;margin:12px 0}.branch-alert{background:#f5eee0;border:1px solid #ead8b9;padding:14px 16px;border-radius:12px;font-size:11px;line-height:1.7;color:#684a25;margin-bottom:22px}
+@media(max-width:760px){.catalog{grid-template-columns:1fr 1fr}.order-toolbar{align-items:stretch;flex-direction:column}.branch-select{width:100%}}
+@media(max-width:480px){.catalog{grid-template-columns:1fr}.food-card{min-height:185px}.cart-panel{padding:19px}.checkout-form .two{grid-template-columns:1fr}}
+</style>
+<section id="online-bestellen" class="ordering section">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">ONLINE BESTELLEN</div><h2>Stell dir dein Menü zusammen.</h2></div><p class="intro">Wähle Gerichte aus, lege sie in den Warenkorb und prüfe deine Auswahl. Preise und Gerichte orientieren sich an der öffentlich einsehbaren Speisekarte.</p></div>
+<div class="branch-alert"><strong>Standortauswahl:</strong> Auf der offiziellen Website ist derzeit eine Filiale mit Adresse Allerseelenstraße 1, 51105 Köln ausgewiesen. Weitere Standorte werden nicht erfunden. Wenn es zusätzliche Filialen gibt, können sie nach Bestätigung ergänzt werden.</div>
+<div class="order-toolbar"><select class="branch-select" id="branchSelect" aria-label="Filiale auswählen"><option value="koeln">Wok Zhang · Allerseelenstraße 1, 51105 Köln</option></select><button class="pill cart-trigger" id="openCart">Warenkorb <span class="cart-count" id="cartCount">0</span></button></div>
+<div class="filterbar" id="menuFilters" style="margin-bottom:20px">
+<button class="filter active" data-menu-filter="all">Alle</button><button class="filter" data-menu-filter="vorspeisen">Vorspeisen</button><button class="filter" data-menu-filter="ente">Ente</button><button class="filter" data-menu-filter="reis">Reis & Nudeln</button><button class="filter" data-menu-filter="pasta">Pasta</button><button class="filter" data-menu-filter="pizza">Pizza</button><button class="filter" data-menu-filter="beilagen">Beilagen</button>
+</div>
+<div class="catalog" id="foodCatalog"></div>
+<p class="menu-note" style="margin-top:18px">Hinweis: Die Online-Speisekarte kann sich ändern. Bitte Preise, Verfügbarkeit, Größen, Zusatzstoffe und Allergene vor dem Livebetrieb mit Wok Zhang abgleichen. Einige Produkte haben Varianten oder Tagespreise; diese sind hier nicht vollständig abgebildet.</p>
+</div></section>
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true"><div class="cart-backdrop" id="cartBackdrop"></div><aside class="cart-panel" role="dialog" aria-modal="true" aria-label="Warenkorb"><div class="cart-head"><h2>Dein Warenkorb</h2><button class="close-cart" id="closeCart" aria-label="Schließen">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Zwischensumme</span><span id="cartTotal">0,00 €</span></div><div class="cart-actions"><button class="pill gold" id="showCheckout">Weiter zur Kasse</button><a class="pill outline" style="background:#14271f;color:white;text-align:center" href="#online-bestellen" id="continueShopping">Weiter einkaufen</a></div>
+<form class="checkout-form" id="checkoutForm"><h3>Lieferung oder Abholung</h3><label for="orderType">Bestellart</label><select id="orderType"><option value="Lieferung">Lieferung</option><option value="Abholung">Abholung</option></select><div class="two"><div><label for="customerName">Name</label><input id="customerName" required autocomplete="name"></div><div><label for="customerPhone">Telefon</label><input id="customerPhone" type="tel" required autocomplete="tel"></div></div><label for="customerStreet">Straße und Hausnummer</label><input id="customerStreet" autocomplete="street-address"><div class="two"><div><label for="customerZip">PLZ</label><input id="customerZip" inputmode="numeric" autocomplete="postal-code"></div><div><label for="customerCity">Ort</label><input id="customerCity" value="Köln" autocomplete="address-level2"></div></div><label for="customerNote">Hinweise zur Bestellung</label><textarea id="customerNote" rows="3" placeholder="z. B. Klingelschild, Wünsche …"></textarea><div class="notice">Dies ist aktuell ein Website-Prototyp. Die Bestellung wird noch nicht an das Restaurant übertragen und es wird keine Zahlung ausgelöst. Für echten Betrieb müssen Bestellannahme, Liefergebiete, Steuern, Bestands-/Öffnungszeiten und Zahlungsanbieter serverseitig angebunden werden.</div><button type="submit" class="pill gold">Bestellung vorbereiten</button><p class="checkout-note">Die offizielle Wok-Zhang-Website beschreibt derzeit Barzahlung bei Lieferung. Eine echte Online-Kartenzahlung ist erst nach Einrichtung und Freigabe eines Händler-Zahlungskontos möglich.</p></form></aside></div>
+<script>
+(()=>{
+const products=[
+{cat:'vorspeisen',name:'Krabbenchips',desc:'Knusprige Krabbenchips.',price:3.5},
+{cat:'vorspeisen',name:'Frühlingsrolle',desc:'Große Frühlingsrolle mit Hackfleisch (Rind/Schwein) und Gemüse.',price:3.5},
+{cat:'vorspeisen',name:'Frühlingsrolle spezial',desc:'Mit Shrimps, Schinken, Hackfleisch und Gemüse.',price:4.5},
+{cat:'vorspeisen',name:'Frühlingsrolle vegetaria',desc:'Große Frühlingsrolle mit Gemüse.',price:3.5},
+{cat:'vorspeisen',name:'Mini Gemüserollen',desc:'10 kleine vegetarische Frühlingsrollen.',price:4.0},
+{cat:'vorspeisen',name:'Hähnchenspieße',desc:'3 marinierte Hähnchenspieße mit Erdnuss-Sauce.',price:5.5},
+{cat:'ente',name:'Ente Chop Suey',desc:'Mit Paprika, Champignons, Zwiebeln, Chinakohl, Bambus und Sojasprossen.',price:14.5},
+{cat:'ente',name:'Ente Kun Bao',desc:'Mit Gemüse und würziger dunkler Hoisin-Sauce.',price:14.5},
+{cat:'ente',name:'Ente Curry',desc:'Mit Gemüse in scharfer gelber Curry-Sauce.',price:14.5},
+{cat:'ente',name:'Ente Erdnuss',desc:'Mit Sojabohnengemüse und Erdnuss-Sauce.',price:14.5},
+{cat:'ente',name:'Ente Szechuan',desc:'Mit verschiedenem Gemüse in sehr scharfer Sauce.',price:14.5},
+{cat:'ente',name:'Ente Süß-Sauer',desc:'Mit Sojabohnengemüse und Süß-Sauer-Sauce.',price:14.5},
+{cat:'reis',name:'Gebratener Reis mit Hühnerfleisch',desc:'Gebratener Reis mit Gemüse und Hähnchen.',price:10.5},
+{cat:'reis',name:'Gebratener Reis mit Schweinefleisch',desc:'Gebratener Reis mit Gemüse und Schweinefleisch.',price:10.5},
+{cat:'reis',name:'Gebratener Reis mit Rindfleisch',desc:'Gebratener Reis mit Gemüse und Rindfleisch.',price:11.5},
+{cat:'reis',name:'Gebratener Reis mit Ente',desc:'Gebratener Reis mit Gemüse und Ente.',price:12.5},
+{cat:'reis',name:'Gebratener Reis mit Gemüse',desc:'Vegetarischer gebratener Reis.',price:9.5},
+{cat:'reis',name:'Gebratener Reis mit Gemüse & Tofu',desc:'Vegetarisch mit Tofu und Gemüse.',price:10.5},
+{cat:'reis',name:'Gebratene Nudeln mit Hühnerfleisch',desc:'Gebratene Nudeln mit Gemüse und Hähnchen.',price:10.5},
+{cat:'reis',name:'Gebratene Nudeln mit Rindfleisch',desc:'Gebratene Nudeln mit Gemüse und Rindfleisch.',price:11.5},
+{cat:'reis',name:'Nasi Goreng',desc:'Reis mit Hähnchen, Gemüse, Schinken und Shrimps in gelbem Curry, scharf.',price:12.0},
+{cat:'pasta',name:'Pasta Bolognese',desc:'Hackfleisch-Tomatensauce (Rind und Schwein gemischt).',price:8.3},
+{cat:'pasta',name:'Pasta Napoli',desc:'Hausgemachte Tomatensauce.',price:7.8},
+{cat:'pasta',name:'Pasta à la Panna',desc:'Schinken in Sahnesauce.',price:9.1},
+{cat:'pasta',name:'Pasta Carbonara',desc:'Schinken und Ei in Sahnesauce.',price:9.1},
+{cat:'pasta',name:'Pasta Diavolo',desc:'Paprika, Oliven, Sardellen, Jalapenos und Knoblauch in Tomatensauce.',price:9.1},
+{cat:'pasta',name:'Pasta Scampi',desc:'Shrimps mit Knoblauch in Napoli-Sauce.',price:9.8},
+{cat:'pasta',name:'Pasta 4 Formaggi',desc:'Gorgonzola, Schafskäse, Mozzarella und Gouda in Sahnesauce.',price:9.1},
+{cat:'pizza',name:'Pizza Margherita · klein',desc:'Tomatensauce und Käse.',price:6.0},
+{cat:'pizza',name:'Pizza Margherita · mittel',desc:'Tomatensauce und Käse.',price:7.9},
+{cat:'pizza',name:'Pizza Margherita · groß',desc:'Tomatensauce und Käse.',price:8.5},
+{cat:'pizza',name:'Pizza Salami · klein',desc:'Mit Salami.',price:6.0},
+{cat:'pizza',name:'Pizza Salami · mittel',desc:'Mit Salami.',price:7.9},
+{cat:'pizza',name:'Pizza Salami · groß',desc:'Mit Salami.',price:8.5},
+{cat:'pizza',name:'Pizza Tonno · mittel',desc:'Mit Thunfisch.',price:7.9},
+{cat:'pizza',name:'Pizza Funghi · mittel',desc:'Mit frischen Champignons.',price:7.9},
+{cat:'pizza',name:'Pizza Hawaii · mittel',desc:'Mit gekochtem Schinken und Ananas.',price:7.5},
+{cat:'beilagen',name:'Beilagensalat',desc:'Kleiner Salat als Beilage.',price:2.0},
+{cat:'beilagen',name:'Gekochter Reis',desc:'Portion Reis.',price:3.5},
+{cat:'beilagen',name:'Gebratener Reis',desc:'Portion gebratener Reis.',price:5.5},
+{cat:'beilagen',name:'Gebratene Nudeln',desc:'Portion gebratene Nudeln.',price:5.5},
+{cat:'beilagen',name:'Pommes Frites',desc:'Portion Pommes.',price:3.5},
+{cat:'beilagen',name:'Kroketten',desc:'Portion Kroketten.',price:3.0},
+{cat:'beilagen',name:'Süß-Sauer-Sauce',desc:'Extra Sauce.',price:1.0},
+{cat:'beilagen',name:'Erdnuss-Sauce',desc:'Extra Sauce.',price:2.5}
+];
+const labels={vorspeisen:'Vorspeisen',ente:'Entengerichte',reis:'Gebratener Reis & Nudeln',pasta:'Pasta',pizza:'Pizza',beilagen:'Beilagen & Extras'};
+const catalog=document.getElementById('foodCatalog'),cart={},drawer=document.getElementById('cartDrawer');
+const euro=n=>n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+let active='all';
+function renderCatalog(){catalog.innerHTML='';Object.keys(labels).forEach(cat=>{const items=products.filter(p=>p.cat===cat&&(active==='all'||active===cat));if(!items.length)return;const heading=document.createElement('h3');heading.className='catalog-category';heading.textContent=labels[cat];catalog.appendChild(heading);items.forEach(p=>{const card=document.createElement('article');card.className='food-card';card.innerHTML='<span class="tag">'+labels[p.cat].toUpperCase()+'</span><h3></h3><p></p><div class="food-bottom"><strong class="food-price">'+euro(p.price)+'</strong><button class="add-food">Hinzufügen +</button></div>';card.querySelector('h3').textContent=p.name;card.querySelector('p').textContent=p.desc;card.querySelector('button').addEventListener('click',()=>{cart[p.name]=(cart[p.name]||0)+1;renderCart()});catalog.appendChild(card)})})}
+document.querySelectorAll('[data-menu-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-menu-filter]').forEach(x=>x.classList.toggle('active',x===b));active=b.dataset.menuFilter;renderCatalog()}));
+function total(){return Object.entries(cart).reduce((sum,[name,q])=>sum+products.find(p=>p.name===name).price*q,0)}
+function renderCart(){const host=document.getElementById('cartItems'),count=Object.values(cart).reduce((a,b)=>a+b,0);document.getElementById('cartCount').textContent=count;document.getElementById('cartTotal').textContent=euro(total());if(!count){host.innerHTML='<div class="cart-empty">Dein Warenkorb ist noch leer.<br>Wähle deine Lieblingsgerichte aus.</div>';return}host.innerHTML='';Object.entries(cart).forEach(([name,q])=>{const p=products.find(x=>x.name===name),line=document.createElement('div');line.className='cart-line';const left=document.createElement('div');left.innerHTML='<strong></strong><small></small>';left.querySelector('strong').textContent=name;left.querySelector('small').textContent=euro(p.price)+' pro Stück';const controls=document.createElement('div');controls.className='qty';const minus=document.createElement('button');minus.textContent='−';const qty=document.createElement('b');qty.textContent=q;const plus=document.createElement('button');plus.textContent='+';minus.onclick=()=>{cart[name]--;if(cart[name]<=0)delete cart[name];renderCart()};plus.onclick=()=>{cart[name]++;renderCart()};controls.append(minus,qty,plus);line.append(left,controls);host.appendChild(line)})}
+function open(){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false')}function close(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true')}
+document.getElementById('openCart').onclick=open;document.getElementById('closeCart').onclick=close;document.getElementById('cartBackdrop').onclick=close;document.getElementById('continueShopping').onclick=close;
+document.getElementById('showCheckout').onclick=()=>{if(!Object.keys(cart).length){alert('Dein Warenkorb ist noch leer.');return}document.getElementById('checkoutForm').classList.add('show');document.getElementById('checkoutForm').scrollIntoView({behavior:'smooth',block:'start'})};
+document.getElementById('orderType').addEventListener('change',e=>{const delivery=e.target.value==='Lieferung';document.getElementById('customerStreet').required=delivery;document.getElementById('customerZip').required=delivery;document.getElementById('customerCity').required=delivery});
+document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventDefault();if(!Object.keys(cart).length)return;const summary=Object.entries(cart).map(([n,q])=>q+' × '+n).join('\n');const text='Website-Prototyp: Bestellung noch nicht übermittelt.\n\n'+summary+'\nGesamt: '+euro(total())+'\nBestellart: '+document.getElementById('orderType').value+'\nName: '+document.getElementById('customerName').value+'\nTelefon: '+document.getElementById('customerPhone').value+'\nAdresse: '+document.getElementById('customerStreet').value+', '+document.getElementById('customerZip').value+' '+document.getElementById('customerCity').value+'\nHinweise: '+document.getElementById('customerNote').value;const blob=new Blob([text],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='wok-zhang-bestellentwurf.txt';a.click();URL.revokeObjectURL(url);alert('Bestellentwurf erstellt. Er wurde NICHT an Wok Zhang gesendet und es wurde nichts bezahlt.');});
+renderCatalog();renderCart();
+})();
+</script>
+
 </body></html>

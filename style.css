@@ -86,3 +86,7 @@
 .scratch-orb{position:absolute;width:270px;height:270px;border:1px solid #5ab58b35;border-radius:50%}
 @media(max-width:800px){.scratch-window{width:88%;min-height:235px}.scratch-workspace{gap:9px;padding:12px}.scratch-stage{min-height:165px}.scratch-blocks span{font-size:8px;padding:10px 7px}}
 @media(max-width:420px){.scratch-workspace{grid-template-columns:1fr 1fr}.scratch-stage{min-height:150px}.scratch-cat{width:55px;height:55px;font-size:30px}}
+
+
+/* KNUX package term note */
+.price-term{display:block;position:relative;z-index:1;margin-top:14px;color:#a9a9a9;font-size:11px;line-height:1.6}

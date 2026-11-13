@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#171713">
-<meta name="description" content="Poller Döner in Köln-Poll: Döner, Dürüm, Falafel, Pide und Lahmacun. Adresse, Kontakt und Anfahrt zur Siegburger Straße 401.">\n<meta property="og:title" content="Poller Döner Köln-Poll">\n<meta property="og:description" content="Dein Imbiss im Veedel. Alle Infos zu Angebot, Kontakt und Anfahrt.">\n<meta name="robots" content="index,follow">
+<meta name="description" content="Poller Döner in Köln-Poll: Döner, Dürüm, Falafel, Pide und Lahmacun. Adresse, Kontakt und Anfahrt zur Siegburger Straße 401.">
+<meta property="og:title" content="Poller Döner Köln-Poll">
+<meta property="og:description" content="Dein Imbiss im Veedel. Alle Infos zu Angebot, Kontakt und Anfahrt.">
+<meta name="robots" content="index,follow">
 <title>Poller Döner Köln | Geschmack aus dem Veedel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,6 +25,59 @@ header{height:88px;display:flex;align-items:center;justify-content:space-between
 footer{background:#11110e;color:white;padding:34px 0 26px}.footer-main{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-note{font-size:10px;color:#99988f;line-height:1.7;margin-top:26px;border-top:1px solid #ffffff20;padding-top:18px}.footer-link{font-size:11px;color:#d7d3c8}
 @media(max-width:850px){.nav{gap:16px}.hero{min-height:660px}.about-grid{gap:35px}.about-image{height:430px}.section{padding:78px 0}.visit-grid{grid-template-columns:1fr}.map-card{min-height:350px}}
 @media(max-width:600px){.map-card iframe{min-height:310px}.map-info{left:12px;bottom:12px;padding:15px;max-width:240px}.wrap{width:calc(100% - 30px)}header{height:auto;min-height:76px;flex-wrap:wrap;padding:13px 0}.nav{order:3;width:100%;overflow:auto;white-space:nowrap;padding:8px 0 12px;font-size:12px}.header-cta{padding:12px;font-size:10px}.topline{font-size:9px}.hero{min-height:710px}.hero:before{background:linear-gradient(90deg,rgba(18,18,14,.94),rgba(18,18,14,.45)),url('https://images.pexels.com/photos/37329607/pexels-photo-37329607.jpeg?auto=compress&cs=tinysrgb&w=1200') 58% center/cover}.hero-inner{padding:50px 25px 185px}h1{font-size:58px}.hero-copy{font-size:14px}.hero-meta{padding:17px 13px;grid-template-columns:1fr 1fr;gap:16px}.meta-item{padding:0 8px;border:0}.meta-item:last-child{display:none}.meta-item strong{font-size:11px}.meta-item small{font-size:9px}.section-top{display:block}.section-intro{margin-top:17px}.menu-layout,.about-grid{grid-template-columns:1fr}.menu-visual{min-height:350px}.menu-categories{gap:9px}.category{min-height:205px;padding:19px 15px}.category h3{font-size:18px}.category p{font-size:11px}.about-image{height:340px}.about-grid{gap:32px}.about-facts{gap:22px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img{height:190px!important;margin:0!important}.gallery-grid img:last-child{display:none}.visit-card{padding:29px}.map-card{padding:20px;min-height:310px}.closing{padding:57px 0}.footer-main{align-items:flex-start;flex-direction:column}}
+
+/* POLLER DÖNER – neues Orange-Grün-Design und überarbeitete Seitenbausteine */
+:root{--ink:#183b2b;--dark:#123c2b;--paper:#f7f7ef;--white:#fffef8;--orange:#f28b24;--muted:#68766c;--line:#dce7d8;--green:#17613d}
+body{background:var(--paper);color:var(--ink)}
+.topline{background:#123c2b;color:#e9f0e7}.topline span{color:#f6a13b}
+header{background:#f7f7ef}
+.brandmark{border-radius:13px;background:var(--orange);color:#173d2b;transform:rotate(-4deg)}
+.brand small{color:#668071}
+.nav a:hover{color:#e27b16}
+.header-cta{background:#17613d;border-radius:30px;padding:15px 23px}.header-cta:hover{background:#0e4b2e}
+.hero{border-radius:0 0 34px 34px;background:#123c2b}
+.hero:before{background:linear-gradient(90deg,rgba(12,54,36,.97) 0%,rgba(12,54,36,.82) 43%,rgba(12,54,36,.15) 100%),url('https://images.pexels.com/photos/37329607/pexels-photo-37329607.jpeg?auto=compress&cs=tinysrgb&w=2000') center 48%/cover}
+.kicker{color:#ffb34f}h1 em{color:#ffad43}
+.btn{background:var(--orange);color:#173d2b;border-radius:30px;padding:16px 25px}.btn:hover{background:#ffad43}
+.btn.secondary{border-radius:30px}
+.hero-meta{background:rgba(13,57,37,.92);border-radius:0 0 34px 34px}
+.eyebrow,.category-no{color:#dc7815}
+.section-top h2,.about h2,.visit h2{color:#174b32}
+.menu-layout{grid-template-columns:.9fr 1.1fr;gap:24px}
+.menu-visual{min-height:530px;border-radius:26px;overflow:hidden}
+.menu-visual img{transition:transform .6s}.menu-visual:hover img{transform:scale(1.035)}
+.menu-visual:after{background:linear-gradient(0deg,rgba(10,49,31,.94),rgba(10,49,31,.02) 78%)}
+.menu-categories{grid-template-columns:1fr 1fr;gap:15px}
+.category{border:1px solid #dce7d8;border-radius:20px;background:#fffef8;min-height:250px;padding:28px;transition:transform .2s,box-shadow .2s}
+.category:hover{transform:translateY(-5px);box-shadow:0 15px 35px #174b3212}
+.category:nth-child(2),.category:nth-child(3){background:#eaf2e7}
+.category h3{color:#174b32}
+.about{background:#123c2b;border-radius:34px;color:white}
+.about h2{color:white}.about-image{border-radius:26px}
+.about .eyebrow{color:#ffad43!important}
+.fact strong{color:#ffad43}
+.gallery-grid{grid-template-columns:1.1fr .9fr 1fr;gap:18px}
+.gallery-grid img{border-radius:22px}
+.visit{background:#eaf1e5;border-radius:34px}
+.visit-card{background:#174b32;border-radius:26px;padding:48px}
+.visit-card h2{color:white}
+.visit-card .eyebrow{color:#ffad43!important}
+.hours strong{color:#ffad43}
+.map-card{border-radius:26px;overflow:hidden}
+.map-info{border-radius:18px}
+.closing{background:#f28b24;border-radius:34px;color:#173d2b}
+.closing h2{color:#173d2b}.closing .btn{background:#174b32;color:white}
+footer{background:#102f23}
+footer .brandmark{background:#f28b24}
+@media(max-width:600px){
+ .hero{border-radius:0 0 23px 23px}.hero-meta{border-radius:0 0 23px 23px}
+ .menu-layout{grid-template-columns:1fr}.menu-visual{min-height:330px}
+ .category{border-radius:16px;min-height:190px;padding:18px 14px}
+ .about,.visit,.closing{border-radius:22px}
+ .visit-card{border-radius:20px;padding:27px}
+ .gallery-grid img{border-radius:15px}
+ .header-cta{border-radius:24px}
+}
 </style>
 </head>
 <body>
@@ -34,7 +90,7 @@ footer{background:#11110e;color:white;padding:34px 0 26px}.footer-main{display:f
 <main>
 <section id="start" class="wrap hero"><div class="hero-inner"><div class="kicker">GUTER GESCHMACK IN KÖLN-POLL</div><h1>Ein guter Döner.<br><em>Ein gutes Gefühl.</em></h1><p class="hero-copy">Dein Anlaufpunkt für türkische Imbissklassiker mitten in Poll. Entdecke Poller Döner, informiere dich über unser Angebot und plane deinen nächsten Besuch.</p><div class="hero-actions"><a class="btn" href="#angebot">UNSER ANGEBOT ENTDECKEN</a><a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=Poller+D%C3%B6ner+Siegburger+Stra%C3%9Fe+401+K%C3%B6ln" target="_blank" rel="noreferrer">STANDORT ANSEHEN</a></div></div><div class="hero-meta"><div class="meta-item"><strong>Mitten in Köln-Poll</strong><small>Siegburger Straße 401</small></div><div class="meta-item"><strong>Türkische Imbissklassiker</strong><small>Für den kleinen und großen Hunger</small></div><div class="meta-item"><strong>Direkter Kontakt</strong><small>Telefonisch erreichbar</small></div></div></section>
 <section id="angebot" class="wrap section"><div class="section-top"><div><div class="eyebrow">DAS ANGEBOT</div><h2>Für deinen Appetit.</h2></div><p class="section-intro">Ob klassischer Döner, Dürüm oder vegetarische Alternative: Hier findest du einen Überblick über die beliebtesten Kategorien. Die vollständige Auswahl erhältst du direkt vor Ort.</p></div><div class="menu-layout"><div class="menu-visual"><img src="https://images.pexels.com/photos/8946552/pexels-photo-8946552.jpeg?auto=compress&cs=tinysrgb&w=1300" alt="Streetfood-Sandwich als Beispielaufnahme"><div class="visual-caption"><div class="kicker">FRISCHER GENUSS</div><h3>Dein Klassiker<br>im Veedel.</h3><p>Ein unkomplizierter Genussmoment, wann immer dich der Hunger packt.</p></div></div><div class="menu-categories"><article class="category"><span class="category-no">01 / KLASSIKER</span><div><h3>Döner & Dürüm</h3><p>Beliebte Klassiker im Brot oder gerollt.</p></div></article><article class="category"><span class="category-no">02 / VEGETARISCH</span><div><h3>Falafel & mehr</h3><p>Herzhafte Alternativen ohne Fleisch.</p></div></article><article class="category"><span class="category-no">03 / TÜRKISCHE KÜCHE</span><div><h3>Pide & Lahmacun</h3><p>Traditionelle Teigspezialitäten.</p></div></article><article class="category"><span class="category-no">04 / VOR ORT</span><div><h3>Die aktuelle Karte</h3><p>Fragen Sie uns nach Auswahl und Tagesangebot.</p></div></article></div></div><p class="menu-disclaimer">Die gezeigten Kategorien dienen als Website-Konzept. Konkrete Gerichte, Preise und Allergene werden vor dem offiziellen Einsatz mit dem Betrieb abgestimmt.</p></section>
-<section id="ueber-uns" class="about section"><div class="wrap about-grid"><img class="about-image" src="https://images.pexels.com/photos/37329607/pexels-photo-37329607.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Döner wird zubereitet, Beispielaufnahme"><div><div class="eyebrow" style="color:#efa14d">DEIN VEEDel. DEIN POLLER DÖNER.</div><h2>Ein Stück<br>Köln-Poll.</h2><p class="about-text">Ein guter Imbiss ist mehr als nur eine schnelle Mahlzeit. Er ist ein vertrauter Ort im Viertel. Poller Döner findest du an der Siegburger Straße 401. Diese Website bringt die wichtigsten Informationen an einem Ort zusammen und macht es dir leicht, deinen Besuch zu planen.</p><div class="about-facts"><div class="fact"><strong>401</strong><small>SIEGBURGER STRASSE</small></div><div class="fact"><strong>Köln</strong><small>STADTTEIL POLL</small></div></div></div></div></section>
+<section id="ueber-uns" class="about section"><div class="wrap about-grid"><img class="about-image" src="https://images.pexels.com/photos/37329607/pexels-photo-37329607.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Döner wird zubereitet, Beispielaufnahme"><div><div class="eyebrow" style="color:#efa14d">DEIN VEEDEL. DEIN POLLER DÖNER.</div><h2>Ein Stück<br>Köln-Poll.</h2><p class="about-text">Ein guter Imbiss ist mehr als nur eine schnelle Mahlzeit. Er ist ein vertrauter Ort im Viertel. Poller Döner findest du an der Siegburger Straße 401. Diese Website bringt die wichtigsten Informationen an einem Ort zusammen und macht es dir leicht, deinen Besuch zu planen.</p><div class="about-facts"><div class="fact"><strong>401</strong><small>SIEGBURGER STRASSE</small></div><div class="fact"><strong>Köln</strong><small>STADTTEIL POLL</small></div></div></div></div></section>
 <section id="eindruecke" class="wrap section"><div class="section-top"><div><div class="eyebrow">KULINARISCHE EINBLICKE</div><h2>Appetit auf mehr.</h2></div><p class="section-intro">Ein erster visueller Eindruck von türkischem Streetfood. Für den endgültigen Internetauftritt können hier echte Fotos aus dem Laden und von den Gerichten eingesetzt werden.</p></div><div class="gallery-grid"><img src="https://images.pexels.com/photos/8946552/pexels-photo-8946552.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Streetfood-Sandwich, Beispielbild"><img src="https://images.pexels.com/photos/37329607/pexels-photo-37329607.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Dönerzubereitung, Beispielbild"><img src="https://images.pexels.com/photos/8946552/pexels-photo-8946552.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Streetfood, Beispielbild"></div></section>
 <section id="kontakt" class="visit section"><div class="wrap"><div class="section-top"><div><div class="eyebrow">BESUCH UNS</div><h2>Wir sind in Poll.</h2></div><p class="section-intro">Du möchtest vorbeikommen oder hast eine Frage? Hier findest du Adresse, Telefonnummer und die wichtigsten Besuchsinformationen.</p></div><div class="visit-grid"><div class="visit-card"><div class="eyebrow" style="color:#efa14d">POLLER DÖNER</div><h2>Bis bald<br>bei uns.</h2><div class="address">Siegburger Straße 401<br>51105 Köln</div><div class="contact-line">0221 75988080</div><div class="hours"><span>Montag bis Donnerstag</span><strong>11:00–22:00</strong><span>Freitag</span><strong>11:00–22:30</strong><span>Samstag</span><strong>11:00–22:00</strong><span>Sonntag</span><strong>Bitte erfragen</strong></div><p class="hours-note">Öffnungszeiten laut öffentlichen Verzeichnissen. Die Angaben zum Sonntag weichen voneinander ab. Bitte telefonisch bestätigen.</p></div><div class="map-card"><iframe title="Karte: Poller Döner, Siegburger Straße 401 in Köln" src="https://www.google.com/maps?q=Poller%20D%C3%B6ner%2C%20Siegburger%20Stra%C3%9Fe%20401%2C%2051105%20K%C3%B6ln&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="map-info"><h3>Poller Döner</h3><p>Siegburger Straße 401<br>51105 Köln</p><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Poller+D%C3%B6ner%2C+Siegburger+Stra%C3%9Fe+401%2C+K%C3%B6ln" target="_blank" rel="noreferrer">ROUTE PLANEN</a></div></div></div></div></section>
 <section class="closing"><div class="wrap"><h2>Dein nächster Genussmoment ist ganz nah.</h2><p>Schau bei Poller Döner in Köln-Poll vorbei. Wir freuen uns auf deinen Besuch.</p><a class="btn" href="tel:+4922175988080">0221 75988080</a></div></section>

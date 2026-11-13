@@ -96,27 +96,27 @@ filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(ite
 <script>
 (()=>{
 const products=[
-{cat:'vorspeisen',name:'Krabbenchips',desc:'Knusprige Krabbenchips.',price:3.5},
-{cat:'vorspeisen',name:'Frühlingsrolle',desc:'Große Frühlingsrolle mit Hackfleisch (Rind/Schwein) und Gemüse.',price:3.5},
-{cat:'vorspeisen',name:'Frühlingsrolle spezial',desc:'Mit Shrimps, Schinken, Hackfleisch und Gemüse.',price:4.5},
-{cat:'vorspeisen',name:'Frühlingsrolle vegetaria',desc:'Große Frühlingsrolle mit Gemüse.',price:3.5},
-{cat:'vorspeisen',name:'Mini Gemüserollen',desc:'10 kleine vegetarische Frühlingsrollen.',price:4.0},
-{cat:'vorspeisen',name:'Hähnchenspieße',desc:'3 marinierte Hähnchenspieße mit Erdnuss-Sauce.',price:5.5},
+{cat:'vorspeisen',name:'Krabbenchips',desc:'Knusprige Krabbenchips.',price:null},
+{cat:'vorspeisen',name:'Frühlingsrolle',desc:'Große Frühlingsrolle mit Hackfleisch (Rind/Schwein) und Gemüse.',price:null},
+{cat:'vorspeisen',name:'Frühlingsrolle spezial',desc:'Mit Shrimps, Schinken, Hackfleisch und Gemüse.',price:null},
+{cat:'vorspeisen',name:'Frühlingsrolle vegetaria',desc:'Große Frühlingsrolle mit Gemüse.',price:null},
+{cat:'vorspeisen',name:'Mini Gemüserollen',desc:'10 kleine vegetarische Frühlingsrollen.',price:null},
+{cat:'vorspeisen',name:'Hähnchenspieße',desc:'3 marinierte Hähnchenspieße mit Erdnuss-Sauce.',price:null},
 {cat:'ente',name:'Ente Chop Suey',desc:'Mit Paprika, Champignons, Zwiebeln, Chinakohl, Bambus und Sojasprossen.',price:14.5},
 {cat:'ente',name:'Ente Kun Bao',desc:'Mit Gemüse und würziger dunkler Hoisin-Sauce.',price:14.5},
 {cat:'ente',name:'Ente Curry',desc:'Mit Gemüse in scharfer gelber Curry-Sauce.',price:14.5},
 {cat:'ente',name:'Ente Erdnuss',desc:'Mit Sojabohnengemüse und Erdnuss-Sauce.',price:14.5},
 {cat:'ente',name:'Ente Szechuan',desc:'Mit verschiedenem Gemüse in sehr scharfer Sauce.',price:14.5},
 {cat:'ente',name:'Ente Süß-Sauer',desc:'Mit Sojabohnengemüse und Süß-Sauer-Sauce.',price:14.5},
-{cat:'reis',name:'Gebratener Reis mit Hühnerfleisch',desc:'Gebratener Reis mit Gemüse und Hähnchen.',price:10.5},
-{cat:'reis',name:'Gebratener Reis mit Schweinefleisch',desc:'Gebratener Reis mit Gemüse und Schweinefleisch.',price:10.5},
-{cat:'reis',name:'Gebratener Reis mit Rindfleisch',desc:'Gebratener Reis mit Gemüse und Rindfleisch.',price:11.5},
+{cat:'reis',name:'Gebratener Reis mit Hühnerfleisch',desc:'Gebratener Reis mit Gemüse und Hähnchen.',price:null},
+{cat:'reis',name:'Gebratener Reis mit Schweinefleisch',desc:'Gebratener Reis mit Gemüse und Schweinefleisch.',price:null},
+{cat:'reis',name:'Gebratener Reis mit Rindfleisch',desc:'Gebratener Reis mit Gemüse und Rindfleisch.',price:null},
 {cat:'reis',name:'Gebratener Reis mit Ente',desc:'Gebratener Reis mit Gemüse und Ente.',price:12.5},
-{cat:'reis',name:'Gebratener Reis mit Gemüse',desc:'Vegetarischer gebratener Reis.',price:9.5},
-{cat:'reis',name:'Gebratener Reis mit Gemüse & Tofu',desc:'Vegetarisch mit Tofu und Gemüse.',price:10.5},
-{cat:'reis',name:'Gebratene Nudeln mit Hühnerfleisch',desc:'Gebratene Nudeln mit Gemüse und Hähnchen.',price:10.5},
-{cat:'reis',name:'Gebratene Nudeln mit Rindfleisch',desc:'Gebratene Nudeln mit Gemüse und Rindfleisch.',price:11.5},
-{cat:'reis',name:'Nasi Goreng',desc:'Reis mit Hähnchen, Gemüse, Schinken und Shrimps in gelbem Curry, scharf.',price:12.0},
+{cat:'reis',name:'Gebratener Reis mit Gemüse',desc:'Vegetarischer gebratener Reis.',price:null},
+{cat:'reis',name:'Gebratener Reis mit Gemüse & Tofu',desc:'Vegetarisch mit Tofu und Gemüse.',price:null},
+{cat:'reis',name:'Gebratene Nudeln mit Hühnerfleisch',desc:'Gebratene Nudeln mit Gemüse und Hähnchen.',price:null},
+{cat:'reis',name:'Gebratene Nudeln mit Rindfleisch',desc:'Gebratene Nudeln mit Gemüse und Rindfleisch.',price:null},
+{cat:'reis',name:'Nasi Goreng',desc:'Reis mit Hähnchen, Gemüse, Schinken und Shrimps in gelbem Curry, scharf.',price:null},
 {cat:'pasta',name:'Pasta Bolognese',desc:'Hackfleisch-Tomatensauce (Rind und Schwein gemischt).',price:8.3},
 {cat:'pasta',name:'Pasta Napoli',desc:'Hausgemachte Tomatensauce.',price:7.8},
 {cat:'pasta',name:'Pasta à la Panna',desc:'Schinken in Sahnesauce.',price:9.1},
@@ -134,10 +134,10 @@ const products=[
 {cat:'pizza',name:'Pizza Funghi · mittel',desc:'Mit frischen Champignons.',price:7.9},
 {cat:'pizza',name:'Pizza Hawaii · mittel',desc:'Mit gekochtem Schinken und Ananas.',price:7.5},
 {cat:'beilagen',name:'Beilagensalat',desc:'Kleiner Salat als Beilage.',price:2.0},
-{cat:'beilagen',name:'Gekochter Reis',desc:'Portion Reis.',price:3.5},
-{cat:'beilagen',name:'Gebratener Reis',desc:'Portion gebratener Reis.',price:5.5},
-{cat:'beilagen',name:'Gebratene Nudeln',desc:'Portion gebratene Nudeln.',price:5.5},
-{cat:'beilagen',name:'Pommes Frites',desc:'Portion Pommes.',price:3.5},
+{cat:'beilagen',name:'Gekochter Reis',desc:'Portion Reis.',price:5.5},
+{cat:'beilagen',name:'Gebratener Reis',desc:'Portion gebratener Reis.',price:null},
+{cat:'beilagen',name:'Gebratene Nudeln',desc:'Portion gebratene Nudeln.',price:null},
+{cat:'beilagen',name:'Pommes Frites',desc:'Portion Pommes.',price:3.0},
 {cat:'beilagen',name:'Kroketten',desc:'Portion Kroketten.',price:3.0},
 {cat:'beilagen',name:'Süß-Sauer-Sauce',desc:'Extra Sauce.',price:1.0},
 {cat:'beilagen',name:'Erdnuss-Sauce',desc:'Extra Sauce.',price:2.5}
@@ -146,9 +146,9 @@ const labels={vorspeisen:'Vorspeisen',ente:'Entengerichte',reis:'Gebratener Reis
 const catalog=document.getElementById('foodCatalog'),cart={},drawer=document.getElementById('cartDrawer');
 const euro=n=>n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
 let active='all';
-function renderCatalog(){catalog.innerHTML='';Object.keys(labels).forEach(cat=>{const items=products.filter(p=>p.cat===cat&&(active==='all'||active===cat));if(!items.length)return;const heading=document.createElement('h3');heading.className='catalog-category';heading.textContent=labels[cat];catalog.appendChild(heading);items.forEach(p=>{const card=document.createElement('article');card.className='food-card';card.innerHTML='<span class="tag">'+labels[p.cat].toUpperCase()+'</span><h3></h3><p></p><div class="food-bottom"><strong class="food-price">'+euro(p.price)+'</strong><button class="add-food">Hinzufügen +</button></div>';card.querySelector('h3').textContent=p.name;card.querySelector('p').textContent=p.desc;card.querySelector('button').addEventListener('click',()=>{cart[p.name]=(cart[p.name]||0)+1;renderCart()});catalog.appendChild(card)})})}
+function renderCatalog(){catalog.innerHTML='';Object.keys(labels).forEach(cat=>{const items=products.filter(p=>p.cat===cat&&(active==='all'||active===cat));if(!items.length)return;const heading=document.createElement('h3');heading.className='catalog-category';heading.textContent=labels[cat];catalog.appendChild(heading);items.forEach(p=>{const card=document.createElement('article');card.className='food-card';card.innerHTML='<span class="tag">'+labels[p.cat].toUpperCase()+'</span><h3></h3><p></p><div class="food-bottom"><strong class="food-price">'+euro(p.price)+'</strong><button class="add-food">Hinzufügen +</button></div>';card.querySelector('h3').textContent=p.name;card.querySelector('p').textContent=p.desc;if(p.price!=null)card.querySelector('button').addEventListener('click',()=>{cart[p.name]=(cart[p.name]||0)+1;renderCart()});catalog.appendChild(card)})})}
 document.querySelectorAll('[data-menu-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-menu-filter]').forEach(x=>x.classList.toggle('active',x===b));active=b.dataset.menuFilter;renderCatalog()}));
-function total(){return Object.entries(cart).reduce((sum,[name,q])=>sum+products.find(p=>p.name===name).price*q,0)}
+function total(){return Object.entries(cart).reduce((sum,[name,q])=>sum+(products.find(p=>p.name===name).price||0)*q,0)}
 function renderCart(){const host=document.getElementById('cartItems'),count=Object.values(cart).reduce((a,b)=>a+b,0);document.getElementById('cartCount').textContent=count;document.getElementById('cartTotal').textContent=euro(total());if(!count){host.innerHTML='<div class="cart-empty">Dein Warenkorb ist noch leer.<br>Wähle deine Lieblingsgerichte aus.</div>';return}host.innerHTML='';Object.entries(cart).forEach(([name,q])=>{const p=products.find(x=>x.name===name),line=document.createElement('div');line.className='cart-line';const left=document.createElement('div');left.innerHTML='<strong></strong><small></small>';left.querySelector('strong').textContent=name;left.querySelector('small').textContent=euro(p.price)+' pro Stück';const controls=document.createElement('div');controls.className='qty';const minus=document.createElement('button');minus.textContent='−';const qty=document.createElement('b');qty.textContent=q;const plus=document.createElement('button');plus.textContent='+';minus.onclick=()=>{cart[name]--;if(cart[name]<=0)delete cart[name];renderCart()};plus.onclick=()=>{cart[name]++;renderCart()};controls.append(minus,qty,plus);line.append(left,controls);host.appendChild(line)})}
 function open(){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false')}function close(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true')}
 document.getElementById('openCart').onclick=open;document.getElementById('closeCart').onclick=close;document.getElementById('cartBackdrop').onclick=close;document.getElementById('continueShopping').onclick=close;

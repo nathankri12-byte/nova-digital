@@ -1,6 +1,6 @@
-# NOVA Digital
+# KNUX Digital
 
-Website-Konzept für NOVA Digital.
+Website-Konzept für KNUX Digital.
 
 ## Dateien
 - index.html – Seiteninhalt
